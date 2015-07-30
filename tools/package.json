@@ -1,0 +1,22 @@
+{
+  "name": "charmingzuo.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/charmingzuo/charmingzuo.github.io"
+  },
+  "author": "charmingzuo@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/charmingzuo/charmingzuo.github.io/issues"
+  },
+  "homepage": "https://github.com/charmingzuo/charmingzuo.github.io",
+  "devDependencies": {
+    "gulp-markdown": "^1.0.0"
+  }
+}
