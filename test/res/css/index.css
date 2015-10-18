@@ -14,8 +14,8 @@ html, body {
     }
 
     .pad {
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
@@ -88,7 +88,11 @@ html, body {
 @media (max-width: 767px) {
     .top-header .left,
     .top-header .right {
-        height: 75px;
+        height: 60px;
+    }
+
+    .top-bar .logo {
+        height: 50px;
     }
 }
 
@@ -101,7 +105,6 @@ html, body {
     .top-bar .logo {
         height: 70px;
     }
-
 }
 
 .top-bar .title-desc {
@@ -330,6 +333,7 @@ html, body {
 
 @media (max-width: 767px) {
     .ceo-header {
+        width: auto;
         border-bottom-width: 1px;
         padding-bottom: 10px;
     }
@@ -648,6 +652,7 @@ html, body {
 
 .concat-us .concat-info {
     margin-top: 30px;
+    padding-left: 10px;
 }
 
 .concat-us .concat-info ul {
@@ -657,11 +662,6 @@ html, body {
 
 .concat-us .concat-info li {
     margin-bottom: 20px;
-    /*height: 60px;*/
-    /*text-indent: 65px;*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: auto 80%;*/
-    /*background-position: 0 10%;*/
 }
 
 .concat-us .concat-info li img {
@@ -672,16 +672,16 @@ html, body {
     float: left;
     margin-left: 20px;
     line-height: 23px;
-    /*margin: 8px 0 0 0;*/
 }
 
-.concat-us .wx-qrcode-inner {
-    margin-left: -10px;
+.concat-us .concat-info li p.line-1 {
+    line-height: 46px;
 }
 
 .concat-us .wx-qrcode-inner p {
     margin-top: 5px;
-    font-size: 10px;
+    font-size: 12px;
+    text-align: center;
 }
 
 @media (max-width: 767px) {
@@ -707,16 +707,17 @@ html, body {
 
     /* 手机微信，左侧显示二维码 */
     .concat-us .concat-body .left {
-        width: 40%;
+        width: 30%;
+        margin-right: 5%;
+        text-align: left;
     }
 
     .concat-us .concat-body .right {
-        width: 60%;
+        width: 65%;
     }
 
     .concat-us .concat-info li {
-        /*text-indent: 40px;*/
-        /*height: 45px;*/
+        margin-bottom: 8px;
     }
 
     .concat-us .concat-info li img {
@@ -729,6 +730,9 @@ html, body {
         line-height: 16px;
     }
 
+    .concat-us .concat-info li p.line-1 {
+        line-height: 32px;
+    }
 }
 
 @media (max-width: 979px) and (min-width: 768px) {
