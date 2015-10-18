@@ -1,0 +1,3 @@
+$(function () {
+    $('#lawyer-slides').carousel()
+});
