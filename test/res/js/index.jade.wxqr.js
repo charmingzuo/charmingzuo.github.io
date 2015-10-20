@@ -1,6 +1,7 @@
 $(function () {
-    var isWX = /MicroMessenger/i.test(navigator.userAgent);
-    if (isWX) {
+    if (g_IS_WECHAT) {
         $('#wxqr').show();
+
+        $('.concat-body').addClass('half-width');
     }
 });

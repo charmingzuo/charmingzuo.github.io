@@ -26,5 +26,8 @@ $(function () {
         s.src = 'http://api.map.baidu.com/api?v=2.0&ak=Ht0Ke4fTceiIR6Qanj0Sw4GD&callback=g_InitBaiduMap';
         s.type = 'text/javascript';
         document.getElementsByTagName('head')[0].appendChild(s);
+
+
+        $('.concat-body').addClass('half-width');
     }
 });

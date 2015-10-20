@@ -50,7 +50,7 @@ html, body {
     padding-bottom: 25px;
 }
 
-.swiper-container-horizontal>.swiper-pagination {
+.swiper-container-horizontal > .swiper-pagination {
     bottom: -5px;
 }
 
@@ -116,7 +116,7 @@ html, body {
 }
 
 .top-bar .title-desc {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: normal;
     text-align: right;
     margin: 0;
@@ -124,6 +124,7 @@ html, body {
 
 @media (max-width: 979px) and (min-width: 768px) {
     .top-bar .title-desc {
+        font-size: 20px;
         margin-right: 40px;
     }
 }
@@ -243,6 +244,10 @@ html, body {
         padding-top: 30px;
         padding-bottom: 30px;
     }
+
+    .banner-subitem-inner-img img {
+        max-width: 80%;
+    }
 }
 
 .home-row-title {
@@ -267,6 +272,12 @@ html, body {
 
     .home-row-title s {
         margin-left: 15px;
+    }
+}
+
+@media (max-width: 979px) and (min-width: 768px) {
+    .home-row-title {
+        font-size: 25px;
     }
 }
 
@@ -295,7 +306,7 @@ html, body {
 
     .cases-row .case img {
         max-height: 100px;
-        max-width: 70%;
+        max-width: 80%;
     }
 
 }
@@ -442,6 +453,7 @@ html, body {
 
     .ceo-desc p {
         font-size: 10px;
+        /*font-size: 12px;*/
         line-height: 14px;
     }
 }
@@ -546,6 +558,7 @@ html, body {
 
     .lawyer-row .lawyer-desc {
         font-size: 10px;
+        /*font-size: 12px;;*/
         line-height: 16px;
         text-align: center;
         height: 36px;
@@ -564,7 +577,7 @@ html, body {
     }
 
     /*.lawyer-box .swiper-pagination {*/
-        /*bottom: 0;*/
+    /*bottom: 0;*/
     /*}*/
 }
 
@@ -597,9 +610,13 @@ html, body {
         padding-right: 5%;
     }
 
+    .lawyer-row .lawyer-name {
+        font-size: 20px;
+    }
+
     .lawyer-row .lawyer-desc {
-        font-size: 10px;
-        line-height: 16px;
+        font-size: 17px;
+        line-height: 24px;
         text-align: center;
         height: 36px;
     }
@@ -607,13 +624,9 @@ html, body {
     .lawyer-row .lawyer-desc .lawyer-long-desc {
         position: relative;
         left: 50%;
-        width: 200px;
-        margin-left: -100px;
+        width: 300px;
+        margin-left: -150px;
         /*border: 1px dotted red;*/
-    }
-
-    .lawyer-row .lawyer-name {
-        font-size: 13px;
     }
 }
 
@@ -699,7 +712,7 @@ html, body {
     line-height: 23px;
 }
 
-.concat-us .concat-info li p.line-1 {
+.concat-us .concat-info li .line-1 {
     line-height: 46px;
 }
 
@@ -726,6 +739,11 @@ html, body {
         right: 4%;
     }
 
+    .concat-us .concat-us-title .title-line hr {
+        border-top-width: 0;
+        border-bottom-width: 1px;
+    }
+
     .concat-us .concat-info {
         margin-top: 10px;
     }
@@ -746,18 +764,47 @@ html, body {
     }
 
     .concat-us .concat-info li img {
-        height: 30px;
+        height: 20px;
     }
 
     .concat-us .concat-info li p {
         font-size: 10px;
+        /*font-size: 12px;;*/
         margin: 0 0 0 5px;
-        line-height: 16px;
+        line-height: 20px;
     }
 
     .concat-us .concat-info li p.line-1 {
         line-height: 32px;
     }
+
+    .concat-us .concat-info li p s {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .concat-us .concat-info li p br {
+        display: none;
+    }
+
+    /* 左右布局时，显示成一行 */
+    .concat-us .half-width li p,
+    .concat-us .half-width li p.line-1 {
+        line-height: 20px;
+    }
+
+    .concat-us .half-width li p s {
+        display: none;
+    }
+
+    .concat-us .half-width li p br {
+        display: block;
+    }
+
+    .concat-us .half-width li img {
+        margin: 5px 0;
+    }
+
 }
 
 @media (max-width: 979px) and (min-width: 768px) {
@@ -776,6 +823,11 @@ html, body {
 
     .concat-us .concat-info li {
         margin-bottom: 30px;
+    }
+
+    .concat-us .concat-info li img {
+        height: 30px;
+        margin-top: 8px;
     }
 
     .concat-us .concat-info {

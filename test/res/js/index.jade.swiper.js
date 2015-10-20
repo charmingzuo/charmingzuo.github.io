@@ -1,4 +1,4 @@
-$(function () {
+$(function () {return;
     if (!g_IS_MOBILE)
         return;
 
