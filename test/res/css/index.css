@@ -531,7 +531,6 @@ html, body {
 @media (max-width: 767px) {
     .lawyer-wrap {
         background-color: rgb(238, 238, 238);
-        padding-bottom: 0;
     }
 
     .lawyer-box {
@@ -585,7 +584,7 @@ html, body {
 
 @media (max-width: 979px) and (min-width: 768px) {
     .lawyer-wrap {
-        padding-bottom: 0;
+        background-color: rgb(238, 238, 238);
     }
 
     .lawyer-box {
