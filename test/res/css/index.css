@@ -47,11 +47,11 @@ html, body {
 
 /*轮播  覆盖默认样式*/
 .swiper-container {
-    padding-bottom: 35px;
+    padding-bottom: 25px;
 }
 
-.swiper-pagination {
-    bottom: 0;
+.swiper-container-horizontal>.swiper-pagination {
+    bottom: -5px;
 }
 
 .swiper-pagination-bullet-active {
@@ -91,8 +91,16 @@ html, body {
         height: 60px;
     }
 
+    .top-header .left {
+        padding-left: 5%;
+    }
+
+    .top-header .right {
+        padding-right: 5%;
+    }
+
     .top-bar .logo {
-        height: 50px;
+        height: 45px;
     }
 }
 
@@ -224,6 +232,10 @@ html, body {
         padding-top: 10px;
         padding-bottom: 10px;
     }
+
+    .banner-subitem-inner-img img {
+        max-width: 80%;
+    }
 }
 
 @media (max-width: 979px) and (min-width: 768px) {
@@ -339,8 +351,8 @@ html, body {
     }
 
     .ceo-header .ceo-title {
-        font-size: 20px;
-        line-height: 25px;
+        font-size: 16px;
+        line-height: 20px;
         margin-right: 20px;
     }
 }
@@ -429,8 +441,8 @@ html, body {
     }
 
     .ceo-desc p {
-        font-size: 12px;
-        line-height: 19px;
+        font-size: 10px;
+        line-height: 14px;
     }
 }
 
@@ -439,6 +451,7 @@ html, body {
 .lawyer-wrap {
     padding-left: 0;
     padding-right: 0;
+    background-color: rgb(238, 238, 238);
 }
 
 .lawyer-box {
@@ -503,6 +516,10 @@ html, body {
 }
 
 @media (max-width: 767px) {
+    .lawyer-wrap {
+        background-color: rgb(238, 238, 238);
+    }
+
     .lawyer-box {
         margin: 10px;
     }
@@ -545,9 +562,17 @@ html, body {
     .lawyer-row .lawyer-name {
         font-size: 13px;
     }
+
+    /*.lawyer-box .swiper-pagination {*/
+        /*bottom: 0;*/
+    /*}*/
 }
 
 @media (max-width: 979px) and (min-width: 768px) {
+    .lawyer-wrap {
+        background-color: rgb(238, 238, 238);
+    }
+
     .lawyer-box {
         margin: 30px;
     }
