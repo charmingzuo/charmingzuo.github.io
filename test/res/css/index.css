@@ -753,7 +753,6 @@ html, body {
     .concat-us .concat-body .left {
         width: 30%;
         margin-right: 5%;
-        text-align: left;
     }
 
     .concat-us .concat-body .right {
@@ -771,12 +770,12 @@ html, body {
     .concat-us .concat-info li p {
         font-size: 10px;
         /*font-size: 12px;;*/
-        margin: 0 0 0 5px;
+        margin: 0 0 0 10px;
         line-height: 20px;
     }
 
     .concat-us .concat-info li p.line-1 {
-        line-height: 32px;
+        line-height: 20px;
     }
 
     .concat-us .concat-info li p s {
@@ -789,9 +788,11 @@ html, body {
     }
 
     /* 左右布局时，显示成一行 */
-    .concat-us .half-width li p,
+    .concat-us .half-width li p  {
+        line-height: 14px;
+    }
     .concat-us .half-width li p.line-1 {
-        line-height: 20px;
+        line-height: 24px;
     }
 
     .concat-us .half-width li p s {
@@ -803,7 +804,7 @@ html, body {
     }
 
     .concat-us .half-width li img {
-        margin: 5px 0;
+        margin: 3px 0;
     }
 
 }
