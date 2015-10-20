@@ -463,7 +463,7 @@ html, body {
 .lawyer-wrap {
     padding-left: 0;
     padding-right: 0;
-    background-color: rgb(238, 238, 238);
+    padding-bottom: 20px;
 }
 
 .lawyer-box {
@@ -505,6 +505,7 @@ html, body {
 
 .lawyer-row {
     padding-top: 60px;
+    padding-bottom: 20px;
 }
 
 .lawyer-row .lawyer-item {
@@ -530,10 +531,11 @@ html, body {
 @media (max-width: 767px) {
     .lawyer-wrap {
         background-color: rgb(238, 238, 238);
+        padding-bottom: 0;
     }
 
     .lawyer-box {
-        margin: 10px;
+        margin: 0;
     }
 
     .lawyer-box .carousel {
@@ -547,13 +549,13 @@ html, body {
 
     .lawyer-row {
         padding-top: 0;
+        padding-bottom: 0;
     }
 
     .lawyer-row .lawyer-item {
-        width: 40%;
+        width: 35%;
         float: left;
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 10%;
     }
 
     .lawyer-row .lawyer-desc {
@@ -583,7 +585,7 @@ html, body {
 
 @media (max-width: 979px) and (min-width: 768px) {
     .lawyer-wrap {
-        background-color: rgb(238, 238, 238);
+        padding-bottom: 0;
     }
 
     .lawyer-box {
@@ -604,10 +606,9 @@ html, body {
     }
 
     .lawyer-row .lawyer-item {
-        width: 40%;
+        width: 35%;
         float: left;
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 10%;
     }
 
     .lawyer-row .lawyer-name {
@@ -821,8 +822,16 @@ html, body {
         right: 10%;
     }
 
+    .concat-us .map {
+        height: 245px;
+    }
+
+    .concat-us .map-inner {
+        margin: 5px;
+    }
+
     .concat-us .concat-info li {
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
 
     .concat-us .concat-info li img {
