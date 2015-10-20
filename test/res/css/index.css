@@ -446,6 +446,9 @@ html, body {
 }
 
 @media (max-width: 767px) {
+    .ceo-table {
+        margin-top: 10px;
+    }
 
     .ceo-photo img {
         bottom: -10px;
@@ -787,9 +790,10 @@ html, body {
     }
 
     /* 左右布局时，显示成一行 */
-    .concat-us .half-width li p  {
+    .concat-us .half-width li p {
         line-height: 14px;
     }
+
     .concat-us .half-width li p.line-1 {
         line-height: 24px;
     }
