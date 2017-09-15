@@ -6,25 +6,64 @@
         <style>
             #log{
                 height: 200px;
-                
+                font-size: 10px;
+                color: #999;
+            }
+            #box {
+                background: red;
+                width:150px;
+                position:absolute;
+                font-size:25px;
+                color:#fff;
+                text-align: center;
+                padding: 20px;
             }
         </style>
     </head>
     <body>
         <div id="log"></div>
 
-        <script src="https://alloyteam.github.io/AlloyFinger/alloy_finger.js"></script>
+        <div id="box">I will move</div>
+
+        <script src="http://alloyteam.github.io/AlloyFinger/alloy_finger.js"></script>
         <script>
+            window.onerror = function (e) {
+                alert(e);
+            };
+
+            var $log = document.querySelector('#log');
+            var $box = document.querySelector('#box');
+            var boxX = 0, boxY = 0;
+
             var af = new AlloyFinger(document.body, {
-                    touchStart: function() {},
-                    twoFingerPressMove: function (evt) {
-                        log(`2 fingers ${evt.deltaY.toFixed(4)}:${evt.deltaY.toFixed(4)}`);
+                touchStart: function(evt) {
+                    log('#CLEAR');
+                    log(`touch start`);
+                },
+                touchEnd: function(evt) {
+                    log(`touch end`);
+                },
+                twoFingerPressMove: function (evt) {
+                    var x = Math.round(evt.deltaX * 10000) / 10000;
+                    var y = Math.round(evt.deltaY * 10000) / 10000;
+                    if (x !== 0 && y !== 0) {
+                        log(`2 fingers ${x}:${y}`);
+                        boxX += x;
+                        boxY += y;
+                        $box.style.left = boxX +'px';
+                        $box.style.top = boxY +'px';
                     }
-                });
+                }
+            });
 
             function log(s) {
-                document.querySelector('#log').innerHTML += '<br>' + s
+                if (s === '#CLEAR') {
+                    $log.innerHTML = '';
+                } else {
+                    $log.innerHTML = s + '<br>' + $log.innerHTML;
+                }
             }
+
         </script>
     </body>
 </html>
