@@ -54,8 +54,7 @@
                         log(`2 fingers ${x}:${y}`);
                         boxX += x;
                         boxY += y;
-                        $box.style.left = boxX +'px';
-                        $box.style.top = boxY +'px';
+                        $box.style.transform = `translateX(${boxX}px) translateY(${boxY}px)`;
                     }
                 }
             });
