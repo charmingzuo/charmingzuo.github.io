@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <style>
+            #log{
+                height: 200px;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div id="log"></div>
+
+        <script src="https://alloyteam.github.io/AlloyFinger/alloy_finger.js"></script>
+        <script>
+            var af = new AlloyFinger(document.body, {
+                    touchStart: function() {},
+                    twoFingerPressMove: function (evt) {
+                        log(`2 fingers ${evt.deltaY.toFixed(4)}:${evt.deltaY.toFixed(4)}`);
+                    }
+                });
+
+            function log(s) {
+                document.querySelector('#log').innerHTML += '<br>' + s
+            }
+        </script>
+    </body>
+</html>
