@@ -3,7 +3,7 @@
         <div class="toolbar">
             <div class="labels">
                 <div class="label">
-                    难度: {{level}}x{{level}}
+                    难度: {{level}}x{{level}}~{{activeNum}}
                 </div>
                 <div class="label">
                     我的记录: {{maxScore}}
@@ -47,7 +47,7 @@
             this.resize()
         },
         computed: {
-            ...mapState(['level', 'step']),
+            ...mapState(['level', 'step', 'activeNum']),
             ...mapState({
                 timeStr: (state) => {
                     return state.time ? timeStr(state.time) : '-'

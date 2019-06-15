@@ -22,3 +22,4 @@ window.addEventListener('load', () => {
     fixRem();
     window.addEventListener('resize', fixRem, false);
 })
+

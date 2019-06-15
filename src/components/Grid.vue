@@ -10,7 +10,7 @@
                     :key="j"
                     :style="{width: 100 / level + '%'}"
                     :class="{active: activeNum === num}">
-                    <div @mousedown="clickNum({num})">{{num}}</div>
+                    <div @click="clickNum({num})">{{num}}</div>
                 </td>
             </tr>
         </table>
@@ -59,7 +59,19 @@
         align-items: center;
     }
 
-    td.active > div:active {
-        background: #c5f7fc;
+    td.active > div {
+        animation: fade 0.3s;
+    }
+
+    @keyframes fade {
+        0% {
+            background: #fff;
+        }
+        50% {
+            background: #c5f7fc;
+        }
+        100% {
+            background: #fff;
+        }
     }
 </style>

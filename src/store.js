@@ -7,16 +7,21 @@ Vue.use(Vuex)
 const _isValidLevel = lv => lv >= 2 && lv <= 30
 const _isMinLevel = lv => lv <= 2
 const _isMaxLevel = lv => lv >= 30
-const _getMaxScore = () => parseInt(localStorage.getItem('MAX_SCORE'), 10) || 0
-const _saveMaxScore = score => {
-    if (score > _getMaxScore()) {
-        localStorage.setItem('MAX_SCORE', score)
+const _getMaxScore = (lv) => parseInt(localStorage.getItem('MAX_SCORE_' + lv), 10) || 0
+const _saveMaxScore = (lv, time) => {
+    if (time < _getMaxScore()) {
+        localStorage.setItem('MAX_SCORE', time)
+        return true
     }
 }
+const _getSavedLevel = () => parseInt(localStorage.getItem('LEVEL'), 10) || 3
+const _saveLevel = lv => localStorage.setItem('LEVEL', lv)
+
+let _level = _getSavedLevel()
 
 export const store = new Store({
     state: {
-        level: 0,
+        level: _level,
         maxNum: 0,
         grid: [],
         activeNum: 0,
@@ -24,17 +29,19 @@ export const store = new Store({
         start: 0,
         end: 0,
         time: 0,
-        maxScore: _getMaxScore(),
+        maxScore: _getMaxScore(_level),
     },
     mutations: {
         changeLevel(state, change) {
             if (_isValidLevel(state.level + change)) {
                 state.level += change
+                state.maxScore = _getMaxScore(state.level)
             }
         },
         setLevel(state, level) {
             if (_isValidLevel(level)) {
                 state.level = level
+                state.maxScore = _getMaxScore(state.level)
             }
         },
         updateGrid(state) {
@@ -50,7 +57,6 @@ export const store = new Store({
             for (let i = 0; i < level; i++) {
                 grid[i] = nums.slice(i * level, (i + 1) * level)
             }
-            state.level = level
             state.maxNum = maxNum
             state.grid = grid
         },
@@ -80,9 +86,11 @@ export const store = new Store({
                     state.step = 'STOP'
                     state.start = 0
                     state.end = 0
-                    state.activeNum = 0
+                    // state.activeNum = 0
 
-                    _saveMaxScore(state.time)
+                    if (_saveMaxScore(state.level, state.time)) {
+                        state.maxScore = state.time
+                    }
                 }
             }
         },
@@ -92,21 +100,16 @@ export const store = new Store({
             commit('changeLevel', 1)
             commit('clearGrid')
             commit('stop')
-            localStorage.setItem('GRID_SIZE', state.level)
+            _saveLevel(state.level)
         },
         levelDown({commit, state}) {
             commit('changeLevel', -1)
             commit('clearGrid')
             commit('stop')
-            localStorage.setItem('GRID_SIZE', state.level)
+            _saveLevel(state.level)
         },
         reload({commit}) {
-            let lv = parseInt(localStorage.getItem('GRID_SIZE'), 10) || 0
-            if (lv > 0) {
-                commit('setLevel', lv)
-            } else {
-                commit('setLevel', 4)
-            }
+            commit('setLevel', _getSavedLevel())
         },
         clickNum({commit, state}, {num}) {
             if (state.step === 'START') {
