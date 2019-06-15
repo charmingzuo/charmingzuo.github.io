@@ -60,14 +60,14 @@ export const store = new Store({
         },
         start(state) {
             state.step = 'START'
-            state.active = 0
+            state.activeNum = 0
             state.start = Date.now()
             state.end = 0
             state.time = 0
         },
         stop(state) {
             state.step = 'STOP'
-            state.active = 0
+            state.activeNum = 0
             state.start = 0
             state.end = 0
             state.time = 0
@@ -80,7 +80,7 @@ export const store = new Store({
                     state.step = 'STOP'
                     state.start = 0
                     state.end = 0
-                    state.active = 0
+                    state.activeNum = 0
 
                     _saveMaxScore(state.time)
                 }
