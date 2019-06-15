@@ -9,7 +9,7 @@ const _isMinLevel = lv => lv <= 2
 const _isMaxLevel = lv => lv >= 30
 const _getMaxScore = (lv) => parseInt(localStorage.getItem('MAX_SCORE_' + lv), 10) || 0
 const _saveMaxScore = (lv, time) => {
-    let maxScore = _getMaxScore();
+    let maxScore = _getMaxScore(lv);
     if (!maxScore || time < maxScore) {
         localStorage.setItem('MAX_SCORE_' + lv, time)
         return true
