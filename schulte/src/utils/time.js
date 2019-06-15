@@ -2,8 +2,8 @@ export const timeStr = (ms) => {
     ms = parseInt(ms, 10)
     let m = 0, s = 0
     if (ms > 1000 * 60) {
-        m = Math.floor(ms / 1000 * 60)
-        ms -= m
+        m = Math.floor(ms / (1000 * 60))
+        ms %= 1000 * 60
     }
     if (ms > 1000) {
         s = Math.round(ms / 1000 * 100) / 100
@@ -18,3 +18,5 @@ export const timeStr = (ms) => {
     }
     return str
 }
+
+console.log(timeStr(1000 * 60 * 2.99))
