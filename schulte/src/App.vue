@@ -3,13 +3,10 @@
         <div class="toolbar">
             <div class="labels">
                 <div class="label">
-                    难度: {{level}}x{{level}}~{{activeNum}}
+                    难度 <span>{{level}}x{{level}}</span>
                 </div>
                 <div class="label">
-                    我的记录: {{maxScore}}
-                </div>
-                <div class="label">
-                    本次时间: {{timeStr}}
+                    我的最高记录 <span>{{maxScore}}</span>
                 </div>
             </div>
             <div class="buttons">
@@ -19,7 +16,12 @@
                 <button @click="clickStop" :disabled="!isStarted()">终止</button>
             </div>
         </div>
-        <grid :viewSize="viewSize"/>
+        <grid v-if="isStarted()" :viewSize="viewSize"/>
+        <div v-else-if="isSuccess()" class="info">
+            <div>恭喜过关</div>
+            <div>本次时间: {{timeStr}}</div>
+        </div>
+        <div v-else class="info">请点击「开始」</div>
     </div>
 </template>
 
@@ -59,7 +61,7 @@
         },
         methods: {
             ...mapActions(['levelUp', 'levelDown', 'clickStart', 'clickStop']),
-            ...mapGetters(['isMinLevel', 'isMaxLevel', 'isStarted']),
+            ...mapGetters(['isMinLevel', 'isMaxLevel', 'isStarted', 'isSuccess']),
             resize() {
                 let windowWidth = document.documentElement.clientWidth || window.innerWidth || document.body.clientWidth
                 this.viewSize = windowWidth * .8
@@ -100,21 +102,49 @@
 
     .toolbar {
         width: 100%;
-        display: flex;
-        flex-direction: row;
         font-size: .4rem;
-        align-items: center;
-        justify-content: space-between;
         margin-bottom: 1rem;
-        text-align: left;
     }
 
-    button {
-        width: 1.8rem;
+    .labels {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: .3rem;
+    }
+
+    .label {
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .label:first-child {
+        width: 30%;
+    }
+
+    .label > span {
+        font-size: .8rem;
+        margin-left: .2rem;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .buttons button {
+        flex: 1;
+        width: 2rem;
         height: 1.1rem;
         font-size: .4rem;
-        margin: 0 0.1rem;
         border: 1px solid #bbb;
         background: #fff;
+        margin-right: 0.2rem;
+    }
+
+    .info {
+        font-size: .6rem;
+        padding-top: 2rem;
     }
 </style>

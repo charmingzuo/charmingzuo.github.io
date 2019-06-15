@@ -9,8 +9,9 @@ const _isMinLevel = lv => lv <= 2
 const _isMaxLevel = lv => lv >= 30
 const _getMaxScore = (lv) => parseInt(localStorage.getItem('MAX_SCORE_' + lv), 10) || 0
 const _saveMaxScore = (lv, time) => {
-    if (time < _getMaxScore()) {
-        localStorage.setItem('MAX_SCORE', time)
+    let maxScore = _getMaxScore();
+    if (!maxScore || time < maxScore) {
+        localStorage.setItem('MAX_SCORE_' + lv, time)
         return true
     }
 }
@@ -83,7 +84,7 @@ export const store = new Store({
                 state.activeNum = num
                 if (num === state.maxNum) { // 结束
                     state.time = Date.now() - state.start
-                    state.step = 'STOP'
+                    state.step = 'SUCCESS'
                     state.start = 0
                     state.end = 0
                     // state.activeNum = 0
@@ -128,5 +129,6 @@ export const store = new Store({
         isMinLevel: state => _isMinLevel(state.level),
         isMaxLevel: state => _isMaxLevel(state.level),
         isStarted: state => state.step === 'START',
+        isSuccess: state => state.step === 'SUCCESS',
     },
 })
