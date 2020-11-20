@@ -8,9 +8,7 @@ description: 微信支付API v3是遵循RESTful风格设计的HTTP API。
 
 所有的API请求必须使用HTTPS。
 
-{% hint style="warning" %}
-请求时不应忽略服务器证书验证的错误，避免被恶意劫持
-{% endhint %}
+> 请求时不应忽略服务器证书验证的错误，避免被恶意劫持
 
 ### 数据格式
 
